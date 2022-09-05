@@ -1,0 +1,14 @@
+---
+- hosts: all
+  name: Install the vim package
+  become: yes
+  vars:
+    packages:
+      - vim
+
+  tasks:
+    - name: Install the vim
+      yum:
+        name: "{{ packages }}"
+        state: present
+    
